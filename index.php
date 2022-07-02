@@ -6,6 +6,7 @@ require_once __DIR__ . "/app/Controllers/GetAbandonedController.php";
 require_once __DIR__ . "/app/Controllers/SaveQueuesController.php";
 require_once __DIR__ . "/app/Controllers/GetTotalizerController.php";
 require_once __DIR__ . "/app/Controllers/GetScheduleController.php";
+require_once __DIR__ . "/app/Controllers/GetAttendedController.php";
 
 $getStatisticsDetailsController = new GetStatisticsDetailsController();
 $getStatisticsQueuesController = new GetStatisticsQueuesController();
@@ -13,6 +14,7 @@ $getAbandonedController = new GetAbandonedController();
 $saveQueuesController = new SaveQueuesController();
 $getTotalizerController = new GetTotalizerController();
 $getScheduleController = new GetScheduleController();
+$getAttendedController = new GetAttendedController();
 
 
 if (empty($argv[1]))
@@ -46,8 +48,8 @@ elseif ($argv[1] == "save-queues")
 elseif ($argv[1] == "test-integration")
 {
     // Testes de integração de novas funções.
-    // print_r("Sem testes no momento!\n");
-    $getTotalizerController->get();
+   $getAttendedController->get();
+    
 }
 else 
 {

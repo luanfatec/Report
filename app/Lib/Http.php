@@ -131,7 +131,7 @@ class HTTPRequest {
             $data=http_build_query($data), $verify=false, $headers=$header,
             $verbose=false
         );
-        
+
         return json_decode($response);
     }
 
@@ -179,7 +179,7 @@ class HTTPRequest {
     }
 
     /**
-     * Undocumented function
+     * Função responsável pela recuperação da Agenda.
      *
      * @param array $data
      * @param string $token
@@ -193,6 +193,27 @@ class HTTPRequest {
 
         $response = $this->accept($method="GET", 
             $url=$this->url . "/agenda?" . http_build_query($data),
+            $verify=false, $data=http_build_query($data), $headers=$header, $verbose=false
+        );
+        
+        return json_decode($response);
+    }
+
+    /**
+     * Função responsável pela recuperação historico de atendidas.
+     *
+     * @param array $data
+     * @param string $token
+     */
+    public function getHistoriesAttended($data, $token)
+    {
+        $header = array (
+            "Content-Type:application/json",
+            "token:$token"
+        );
+
+        $response = $this->accept($method="GET", 
+            $url=$this->url . "/atendidas/relatorio?" . http_build_query($data),
             $verify=false, $data=http_build_query($data), $headers=$header, $verbose=false
         );
         

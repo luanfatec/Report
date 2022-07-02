@@ -21,6 +21,6 @@ class QueuesConfigController {
             array_push($queues, $consult[$ind]["queues_config_fila"]);
         }
 
-        return $queues;
+        return join(",", $queues);
     }
 }

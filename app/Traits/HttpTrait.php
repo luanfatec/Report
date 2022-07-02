@@ -47,7 +47,6 @@ trait HttpTrait {
      *
      * @param array $data
      * @param string $token
-     * @return void
      */
     public function getAbandoned($data, $token)
     {
@@ -91,5 +90,16 @@ trait HttpTrait {
         $http = new HTTPRequest();
         return $http->getSchedule($data, $token);
     }
-    
+        
+    /**
+     * Ponte para recuperação do histórico de chamadas atendidas.
+     *
+     * @param array $data
+     * @param string $token
+     */
+    public function getHistoriesAttended($data, $token)
+    {
+        $http = new HTTPRequest();
+        return $http->getHistoriesAttended($data, $token);
+    }
 }

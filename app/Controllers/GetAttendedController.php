@@ -6,12 +6,11 @@ require_once __DIR__ . "/../Common/Environmento.php";
 require_once __DIR__ . "/../Traits/HttpTrait.php";
 require_once __DIR__ . "/../Controllers/LoginController.php";
 require_once __DIR__ . "/../Controllers/QueuesConfigController.php";
-require_once __DIR__ . "/../Models/Schedule.php";
 
 Environment::load(__DIR__ . "/../../");
 
 
-class GetAbandonedController {
+class GetAttendedController {
 
     use HttpTrait;
 
@@ -25,7 +24,7 @@ class GetAbandonedController {
         # Recupera as filas cadastradas.
         $queues = $queuesConfigController->get();
         
-        $resp = $this->getAbandoned($data=array(
+        $resp = $this->getHistoriesAttended($data=array(
             "dataInicial" => "2022-06-01 00:00:00",
             "dataFinal" => "2022-06-30 23:40:00",
             "filas" => $queues, 
