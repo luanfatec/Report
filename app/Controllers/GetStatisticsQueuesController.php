@@ -31,7 +31,7 @@ class GetStatisticsQueuesController {
         $token = $loginController->auth()->token;
 
         # Recupera as filas cadastradas.
-        $queues = $queuesConfigController->get();
+        $queues = explode(",", $queuesConfigController->get());
 
         # Recupera a data do dia anterior.
         $lastDay = gmdate("Y-m-d", time()-(3600*27));

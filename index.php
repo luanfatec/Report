@@ -26,7 +26,7 @@ elseif ($argv[1] == "update-db")
 {
     // Atualização de produção, por favor, não executar.
     $getStatisticsQueuesController->get();
-    $getTotalizerController->get();
+    //$getTotalizerController->get();
 }
 
 elseif ($argv[1] == "save-phones")
