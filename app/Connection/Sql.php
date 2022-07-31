@@ -11,10 +11,11 @@ class Connection {
     public function db()
     {
         try {
-            $conn = new \PDO("mysql:host=" . getenv("MYSQL_HOST") . ";dbname=". getenv("MYSQL_DATABASE"), getenv("MYSQL_USER"), getenv("MYSQL_PASSWORD"));
+            $conn = new \PDO("mysql:host=" . getenv("MYSQL_HOST") . ";dbname=". getenv("MYSQL_DATABASE") . ";port=" . getenv("MYSQL_PORT"), getenv("MYSQL_USER"), getenv("MYSQL_PASSWORD"));
             return $conn;
         } catch (\PDOException $err) {
-            $err->getMessage();
+            return $err->getMessage();
+            exit;
         }
     }
 }

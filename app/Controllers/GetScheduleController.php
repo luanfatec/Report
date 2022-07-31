@@ -27,11 +27,12 @@ class GetScheduleController
             "tipo" => "IN",
             "totalPorPagina" => 200000
         ), $token);
-
+        
         for ($idx = 0; $idx < intval($response->totalRegistros); $idx++)
         {
             $schedule->save($response->resultados[$idx]);
         }
+        
 
     }
 }

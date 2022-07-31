@@ -4,7 +4,7 @@ create table ctl_statistics_queues (
     data DATE NOT NULL,
     total_chamadas int null,
     porcen_chamadas_atendidas_nivel FLOAT null,
-    maior_tempo_espera FLOAT null,
+    maior_tempo_espera TIME null,
     data_maior_espera DATETIME null,
     total_chamadas_atendidas int null,
     porcen_atendidas FLOAT null,
@@ -104,4 +104,16 @@ SELECT
     SUM(externas_recebidas_atendidas + externas_recebidas_nao_atendidas + externas_realizadas_atendidas +
     externas_realizadas_nao_atendidas + internas_recebidas_atendidas + internas_recebidas_nao_atendidas +
     internas_realizadas_atendidas + internas_realizadas_nao_atendidas + transferidas_recebidas + transferidas_realizadas) AS totalizer
-FROM ctl_totalizer
+FROM ctl_totalizer;
+
+DROP TABLE ctl_schedule;
+
+CREATE TABLE ctl_schedule (
+  id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  name varchar(255) NULL,
+  telefone1 varchar(20) NULL UNIQUE,
+  tipo varchar(20) NULL
+);
+
+
+SELECT * FROM ctl_schedule;

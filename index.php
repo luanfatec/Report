@@ -31,7 +31,8 @@ elseif ($argv[1] == "update-db")
 
 elseif ($argv[1] == "save-phones")
 {
-    $getScheduleController->get();
+    $test = $getScheduleController->get();
+    print_r($test);
 }
 
 elseif ($argv[1] == "save-queues")
