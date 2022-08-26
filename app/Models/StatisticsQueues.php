@@ -26,6 +26,8 @@ class StatisticsQueues extends Connection {
 
     public function save($queue, $params)
     {
+	print($params);
+	exit;
         $query = "INSERT INTO $this->table (
             fila, data, total_chamadas, porcen_chamadas_atendidas_nivel, maior_tempo_espera, data_maior_espera, total_chamadas_atendidas, 
             porcen_atendidas, total_abandonadas, porcen_abandonadas, total_transbordadas, porcen_transbordadas, 

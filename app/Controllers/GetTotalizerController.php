@@ -30,6 +30,7 @@ class GetTotalizerController
             "totalPorPagina" => 200000
         ), $token);
 
+
         for ($idx = 0; $idx < intval($response->totalRegistros); $idx++)
         {
             $totalizer->save($response->resultados[$idx]);

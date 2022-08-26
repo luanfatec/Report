@@ -36,6 +36,8 @@ class GetStatisticsQueuesController {
         # Recupera a data do dia anterior.
         $lastDay = gmdate("Y-m-d", time()-(3600*27));
 
+        
+
         foreach ($queues as $queue)
         {
             $response = $this->getStatisticsQueues($data=array(
@@ -44,7 +46,7 @@ class GetStatisticsQueuesController {
                 "filas" => $queue, 
                 "agruparPor" => "dia",
                 "totalPorPagina" => 200000
-            ), $token); 
+            ), $token);             
             
             // Buscando dados dentro do array recuperado da requisição.
             for ($idx = 0; $idx < intval($response->totalRegistros); $idx++)

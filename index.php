@@ -7,6 +7,7 @@ require_once __DIR__ . "/app/Controllers/SaveQueuesController.php";
 require_once __DIR__ . "/app/Controllers/GetTotalizerController.php";
 require_once __DIR__ . "/app/Controllers/GetScheduleController.php";
 require_once __DIR__ . "/app/Controllers/GetAttendedController.php";
+require_once __DIR__ . "/app/Controllers/GetAttendedController.php";
 
 $getStatisticsDetailsController = new GetStatisticsDetailsController();
 $getStatisticsQueuesController = new GetStatisticsQueuesController();
@@ -26,7 +27,8 @@ elseif ($argv[1] == "update-db")
 {
     // Atualização de produção, por favor, não executar.
     $getStatisticsQueuesController->get();
-    //$getTotalizerController->get();
+    $getTotalizerController->get();
+    
 }
 
 elseif ($argv[1] == "save-phones")
